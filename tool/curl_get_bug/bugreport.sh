@@ -1,5 +1,5 @@
 #!/bin/bash
-#³õÊ¼»¯
+#åˆå§‹åŒ–
 export LANG=zh_CN.GB18030
 date=`date +%Y-%m-%d`
 date2=`date +%Y%m%d`
@@ -17,19 +17,10 @@ curlsebug=$dir/curlsebug.php
 sebuglog=$logdir/sebuglog$date.log
 nginxlog=$logdir/nginxlog.log
 dedecmslog=$logdir/dedecmslog$date.log
-sebugsub="¡¾×¢Òâ£¡sebug.net³öÏÖĞÂÂ©¶´¡¿¡¾ÇëËÙÈ¥²é¿´»òÁôÒâÏÂ·¢ÓÊ¼ş¡¿"
-nginxsub="¡¾×¢Òâ£¡nginx.org³öÏÖĞÂ²¹¶¡¡¿¡¾ÇëËÙÈ¥²é¿´»òÁôÒâÏÂ·¢ÓÊ¼ş¡¿"
-dedecmssub="¡¾×¢Òâ£¡dedecms³öÏÖĞÂ²¹¶¡¡¿¡¾ÇëËÙÈ¥²é¿´»òÁôÒâÏÂ·¢ÓÊ¼ş¡¿"
+sebugsub="ã€æ³¨æ„ï¼sebug.netå‡ºç°æ–°æ¼æ´ã€‘ã€è¯·é€Ÿå»æŸ¥çœ‹æˆ–ç•™æ„ä¸‹å‘é‚®ä»¶ã€‘"
+nginxsub="ã€æ³¨æ„ï¼nginx.orgå‡ºç°æ–°è¡¥ä¸ã€‘ã€è¯·é€Ÿå»æŸ¥çœ‹æˆ–ç•™æ„ä¸‹å‘é‚®ä»¶ã€‘"
+dedecmssub="ã€æ³¨æ„ï¼dedecmså‡ºç°æ–°è¡¥ä¸ã€‘ã€è¯·é€Ÿå»æŸ¥çœ‹æˆ–ç•™æ„ä¸‹å‘é‚®ä»¶ã€‘"
 
-function notice()
-{
-	#caigz
-	# mail -s $1 caigz@mail.untx.cn < $2
-	# /usr/bin/curl "http://42.121.69.249/msg/msg/caigz.php?info=$1"
-	#ALL
-	mail -s $1 caigz@mail.untx.cn  zhouyx@mail.untx.cn dengxd@mail.untx.cn yangyh@mail.untx.cn xiesf@untx.com zzf@mail.untx.cn < $2
-	/usr/bin/curl "http://42.121.69.249/msg/msg/bugreport.php?info=$1"
-}
 
 function checkbug()
 {
@@ -56,7 +47,7 @@ if [ "`cat $maillog`" ]
 then
 	checkbug $maillog $sebuglog $sebugsub
 fi
-#ÇåÀíÈÕÖ¾ÎÄ¼ş
+#æ¸…ç†æ—¥å¿—æ–‡ä»¶
 rm -rf $bug   $maillog
 #######################################################
 
@@ -66,7 +57,7 @@ rm -rf $bug   $maillog
 ##curlnginx######################################
 /usr/local/php/bin/php $curlnginx |iconv -futf8 -t GB18030 -o $maillog
 checkbug $maillog $nginxlog $nginxsub
-#ÇåÀíÈÕÖ¾ÎÄ¼ş
+#æ¸…ç†æ—¥å¿—æ–‡ä»¶
 rm -rf $bug  $maillog
 ##########################################################
 
@@ -78,6 +69,6 @@ if [ "`cat $maillog`" ]
 then
 	checkbug $maillog $dedecmslog $dedecmssub
 fi
-#ÇåÀíÈÕÖ¾ÎÄ¼ş
+#æ¸…ç†æ—¥å¿—æ–‡ä»¶
 rm -rf $bug  $maillog
 ##########################################################
