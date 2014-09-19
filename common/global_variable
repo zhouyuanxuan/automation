@@ -1,0 +1,10 @@
+export scriptsdir="/root/scripts"
+export datetime=`date +"%Y-%m-%d_%H_%M"`
+export datetime1=`date +"%Y%m%d"`
+server_addr="host_ip"
+BACKUP="/root/backup"
+basedir="/home/soft"
+soft_path="/usr/local"
+squid_path="/home/squid"
+web_path="/home/webadm"
+backup_path="/home/backup"

@@ -1,0 +1,7 @@
+version 1（2014-06-20）
+	
+	#zhouyx 2014-06-20
+	修改软件列表softlist的下载方法，改成加密，并且在客户端上安装完就直接删除。
+	#zhouyx 2014-07-17
+	修改简化function_system_version函数，处理安装php时有时会因为系统版本无法完成安装
+

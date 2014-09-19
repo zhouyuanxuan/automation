@@ -1,0 +1,19 @@
+#this is the sample
+
+#bakup config file format:
+dailback_v2()
+{
+cat<<SUB
+/var/spool/cron       ###the path
+/root/iptables.sh
+/etc/rsyncd.conf
+SUB
+
+}
+#define the mysql user password and host
+Mysql_back()
+{
+user="zhouyx"
+password="zhouyx"
+host="127.0.0.1"
+}
