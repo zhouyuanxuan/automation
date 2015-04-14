@@ -2,6 +2,7 @@
 # NOTICE:common class to used
 # TIME:2013-08-12
 # AUTHOR:zhouyx
+#add by zhouyx
 source ${scriptsdir}/common/global_variable
 #function version check
 function_version_check()
@@ -31,7 +32,7 @@ function_wget()
 	do
 		soft_detail=`cat ${basedir}/softlist.txt|grep $soft |awk '{ print $2}'`
 		wget  -N -T 8  -t 5 $url/soft/${soft_detail} -P ${basedir}
-		# -t ´ÎÊý£¬-T ³¬Ê±Ê±¼ä -P downloadÂ·¾¶
+		# -t Â´ÃŽÃŠÃ½Â£Â¬-T Â³Â¬ÃŠÂ±ÃŠÂ±Â¼Ã¤ -P downloadÃ‚Â·Â¾Â¶
 		if [ $? -eq 0 ]
 		then
 			md5=`grep $1 ${basedir}/softlist.txt | awk '{ print $1 }'`
