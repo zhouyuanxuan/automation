@@ -13,4 +13,3 @@ then
 fi
 [ -e /root/scripts/scripts.zip ] && rm -rf /root/scripts/scripts.zip*
 rm -rf $scriptsdir/version.txt.*
-
